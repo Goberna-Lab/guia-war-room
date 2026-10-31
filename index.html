@@ -112,25 +112,25 @@ h2{font-size:50px;margin:14px 0 12px}
 .legend-line i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:8px;vertical-align:-1px}
 
 /* Demo guiada */
-.demo{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:34px;flex:1;min-height:0;margin-top:20px}
+.demo{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);gap:34px;flex:1;min-height:0;margin-top:20px}
 .win{align-self:start;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(96,165,250,.08);min-height:0}
 .win .bar{display:flex;align-items:center;gap:14px;padding:10px 16px;background:#0e1827;border-bottom:1px solid var(--line);flex:none}
 .win .dots{display:flex;gap:7px}.win .dots i{width:11px;height:11px;border-radius:50%;background:var(--line)}
 .win .url{flex:1;padding:6px 14px;border-radius:8px;background:var(--app);border:1px solid var(--line);color:var(--muted);font-size:14px;font-family:ui-monospace,Menlo,Consolas,monospace}
-.screen{position:relative;container-type:inline-size;aspect-ratio:1280/800;width:100%;flex:none;background:#000;overflow:hidden}
+.screen{position:relative;container-type:inline-size;aspect-ratio:1920/1080;width:100%;flex:none;background:#000;overflow:hidden}
 .pan{position:absolute;inset:0;transform-origin:0 0;transition:transform .6s ease}
 .screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;opacity:0;transition:opacity .35s ease}
 .screen img.on{opacity:1}
 .ring{position:absolute;border:3px solid var(--gold);border-radius:12px;box-shadow:0 0 0 4px rgba(255,200,0,.18),0 0 40px rgba(255,200,0,.55);pointer-events:none;opacity:0;transition:left .5s ease,top .5s ease,width .5s ease,height .5s ease,opacity .3s}
 .ring.on{opacity:1;animation:pulse 1.4s ease-in-out infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 10px rgba(255,200,0,.08),0 0 60px rgba(255,200,0,.75)}}
-.cursor{position:absolute;width:3.4cqw;height:3.4cqw;pointer-events:none;opacity:0;transition:left .7s cubic-bezier(.3,.7,.2,1),top .7s cubic-bezier(.3,.7,.2,1),opacity .3s;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
+.cursor{position:absolute;width:2.6cqw;height:2.6cqw;pointer-events:none;opacity:0;transition:left .7s cubic-bezier(.3,.7,.2,1),top .7s cubic-bezier(.3,.7,.2,1),opacity .3s;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
 .cursor.on{opacity:1}
-.ghost{position:absolute;display:none;align-items:center;color:#fff;font-size:1.3cqw;letter-spacing:.02em;pointer-events:none;white-space:nowrap;font-family:var(--sans)}
-.ghost.pw{letter-spacing:.35em;font-size:1.5cqw}
-.ghost::after{content:"";width:.12cqw;height:1.5cqw;background:var(--gold);margin-left:.15cqw;animation:blink .9s steps(1) infinite}
+.ghost{position:absolute;display:none;align-items:center;padding-left:10px;background:#1b2538;border-radius:6px;color:#fff;font-size:.88cqw;letter-spacing:.02em;pointer-events:none;white-space:nowrap;font-family:var(--sans)}
+.ghost.pw{letter-spacing:.35em;font-size:1.25cqw}
+.ghost::after{content:"";width:.1cqw;height:1cqw;background:var(--gold);margin-left:.12cqw;animation:blink .9s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.callout{position:absolute;padding:.55cqw 1cqw;border-radius:999px;font-family:var(--display);font-weight:700;font-size:1.05cqw;letter-spacing:.05em;background:rgba(10,16,24,.94);border:1px solid var(--gold);color:var(--gold);white-space:nowrap;opacity:0;animation:aparece .5s ease forwards;transform:translate(-50%,-50%)}
+.callout{position:absolute;padding:.45cqw .9cqw;border-radius:999px;font-family:var(--display);font-weight:700;font-size:.9cqw;letter-spacing:.05em;background:rgba(10,16,24,.94);border:1px solid var(--gold);color:var(--gold);white-space:nowrap;opacity:0;animation:aparece .5s ease forwards;transform:translate(-50%,-50%)}
 @keyframes aparece{to{opacity:1}}
 
 .side{display:flex;flex-direction:column;min-height:0}
@@ -290,7 +290,7 @@ h2{font-size:50px;margin:14px 0 12px}
     <h2>Tu identidad aparece en toda la sala</h2>
     <div class="demo">
       <div class="win"><div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">https://simulacion.goberna.us/war-room/</div></div>
-        <div class="screen" data-img="sala-personalizada" data-calls='[{"x":17,"y":30,"t":"Tu logo en la pared","d":0.2},{"x":34,"y":38,"t":"Tu candidato en la pantalla","d":1.0},{"x":17,"y":86,"t":"Tu tarjeta de campaña","d":1.8},{"x":72,"y":4,"t":"Tu partido en la barra","d":2.6}]'></div></div>
+        <div class="screen" data-img="sala-personalizada" data-calls='[{"x":25,"y":30,"t":"Tu logo en la pared","d":0.2},{"x":34,"y":39,"t":"Tu candidato en la pantalla","d":1.0},{"x":10,"y":90,"t":"Tu tarjeta de campaña","d":1.8},{"x":34,"y":9.5,"t":"Tu partido en la barra","d":2.6}]'></div></div>
       <div class="side"><div class="legend">
         <div class="row"><span class="dot" style="background:var(--gold)"></span><div><h4>Se ve en vivo</h4><p>Al guardar, la sala se personaliza: tu logo, tu color y tu candidato al frente.</p></div></div>
         <div class="row"><span class="dot" style="background:var(--blue)"></span><div><h4>Acompaña tus publicaciones</h4><p>Cada pieza que publiques en el muro sale con la identidad de tu partido.</p></div></div>
@@ -308,7 +308,7 @@ h2{font-size:50px;margin:14px 0 12px}
     <h2>La encuesta de la semana</h2>
     <div class="demo">
       <div class="win"><div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">https://simulacion.goberna.us/war-room/</div></div>
-        <div class="screen" data-img="ana-1-diario" data-calls='[{"x":77,"y":47,"t":"Encuesta de la semana","d":0.3},{"x":30,"y":47,"t":"Portada del diario","d":1.1}]'></div></div>
+        <div class="screen" data-img="ana-1-diario" data-calls='[{"x":69,"y":33,"t":"Encuesta de la semana","d":0.3},{"x":35,"y":33,"t":"Portada del diario","d":1.1}]'></div></div>
       <div class="side"><div class="legend">
         <div class="row"><span class="dot" style="background:var(--gold)"></span><div><h4>Área 2 · Análisis / Monitoreo</h4><p>El diario Goberna News reúne la portada, la red social, el noticiero y el mercado.</p></div></div>
         <div class="row"><span class="dot" style="background:var(--blue)"></span><div><h4>Una estimación con ruido</h4><p>La encuesta es una estimación de intención de voto con margen: no es el resultado exacto.</p></div></div>
@@ -373,58 +373,63 @@ function fit(){ const s = Math.min(innerWidth/1600, innerHeight/900); stage.styl
 addEventListener('resize', fit); fit();
 
 /* Demos: capturas reales, medidas sobre 1280×800. Cada paso lleva un aro (x, y, ancho, alto). */
-const W = 1280, H = 800;
+const W = 1920, H = 1080;
 const URL_HUB = 'https://simulacion.goberna.us', URL_JUEGO = 'https://simulacion.goberna.us/war-room/';
+const Z_LOGIN = [560,470,800,450];           /* zona de la tarjeta de login */
+const Z_FORM_ARRIBA = [410,160,1100,619];    /* formulario «Mi War Room», parte alta */
+const Z_FORM_ABAJO = [410,440,1100,619];     /* formulario «Mi War Room», parte baja */
+const Z_PANEL = [385,100,1150,647];          /* paneles de área (Biblioteca, Publicar) */
 const DEMOS = {
-  primer: { url: URL_HUB, pasos: [
-    { img:'login-1-correo', ring:[427,468,426,56], ghost:{rect:[427,468,426,56], text:'tu.correo@ejemplo.com'}, t:'Escribe tu correo', p:'Usa el mismo correo con el que te inscribiste al diploma.' },
-    { img:'login-1-correo', ring:[427,548,426,56], t:'Pulsa «Continuar»', p:'El sistema reconoce que es tu primer ingreso y te pide crear una contraseña.' },
-    { img:'login-2-primer-ingreso', ring:[427,478,426,128], ghost:{rect:[427,478,426,56], text:'••••••••••', pw:true}, t:'Crea tu contraseña', p:'Mínimo 8 caracteres. Escríbela dos veces para confirmarla.' },
-    { img:'login-3-clave-escrita', ring:[427,670,426,56], t:'Pulsa «Crear contraseña y entrar»', p:'Desde ahora entrarás con tu correo y esa contraseña.' },
-    { img:'login-4-simuladores', ring:[104,200,345,271], t:'Elige War Room', p:'Tu lista muestra los simuladores. El que dice «Habilitado» es al que puedes entrar.' }
+  primer: { url: URL_HUB, zoom: Z_LOGIN, pasos: [
+    { img:'login-1-correo', ring:[747,608,426,56], ghost:{rect:[747,608,426,56], text:'tu.correo@ejemplo.com'}, t:'Escribe tu correo', p:'Usa el mismo correo con el que te inscribiste al diploma.' },
+    { img:'login-1-correo', ring:[747,688,426,56], t:'Pulsa «Continuar»', p:'El sistema reconoce que es tu primer ingreso y te pide crear una contraseña.' },
+    { img:'login-2-primer-ingreso', ring:[747,618,426,128], ghost:{rect:[747,618,426,56], text:'••••••••••', pw:true}, t:'Crea tu contraseña', p:'Mínimo 8 caracteres. Escríbela dos veces para confirmarla.' },
+    { img:'login-3-clave-escrita', ring:[747,810,426,56], t:'Pulsa «Crear contraseña y entrar»', p:'Desde ahora entrarás con tu correo y esa contraseña.' },
+    { img:'login-4-simuladores', ring:[424,200,345,271], zoom:null, t:'Elige War Room', p:'Tu lista muestra los simuladores. El que dice «Habilitado» es al que puedes entrar.' }
   ]},
-  regreso: { url: URL_HUB, pasos: [
-    { img:'login-1-correo', ring:[427,468,426,56], ghost:{rect:[427,468,426,56], text:'tu.correo@ejemplo.com'}, t:'Escribe tu correo', p:'Y pulsa «Continuar».' },
-    { img:'login-5-clave-existente', ring:[427,468,426,56], ghost:{rect:[427,468,426,56], text:'••••••••••', pw:true}, t:'Escribe tu contraseña', p:'La misma que creaste en tu primer ingreso. Marca «Recordarme» si es tu computadora.' },
-    { img:'login-5-clave-existente', ring:[427,588,426,56], t:'Pulsa «Iniciar sesión»', p:'¿Olvidaste tu contraseña? Pídele a un administrador que la restablezca.' }
+  regreso: { url: URL_HUB, zoom: Z_LOGIN, pasos: [
+    { img:'login-1-correo', ring:[747,608,426,56], ghost:{rect:[747,608,426,56], text:'tu.correo@ejemplo.com'}, t:'Escribe tu correo', p:'Y pulsa «Continuar».' },
+    { img:'login-5-clave-existente', ring:[747,608,426,56], ghost:{rect:[747,608,426,56], text:'••••••••••', pw:true}, t:'Escribe tu contraseña', p:'La misma que creaste en tu primer ingreso. Marca «Recordarme» si es tu computadora.' },
+    { img:'login-5-clave-existente', ring:[747,728,426,56], t:'Pulsa «Iniciar sesión»', p:'¿Olvidaste tu contraseña? Pídele a un administrador que la restablezca.' }
   ]},
-  rol: { url: URL_JUEGO, zoom: [240,90,800,500], pasos: [
-    { img:'rol-1-elegir', ring:[345,178,590,62], t:'Tu comando ya viene asignado', p:'Entras con tu correo y el sistema ya sabe a qué comando perteneces. No lo eliges tú.' },
-    { img:'rol-1-elegir', ring:[345,298,571,134], t:'Elige tu rol', p:'Son diez roles en cuatro áreas. Cada uno maneja una palanca distinta de la campaña.' },
-    { img:'rol-2-candidato', ring:[345,318,284,54], t:'Por ejemplo: Candidato', p:'Imagen, credibilidad y vocería en crisis. Es un rol de jefatura: hay uno solo por comando.' },
-    { img:'rol-2-candidato', ring:[345,641,590,40], zoom:[240,230,800,500], t:'Pulsa «Entrar al War Room»', p:'Si te equivocas, puedes cambiarlo tú mismo con el botón «Cambiar rol» de la barra de arriba.' }
+  rol: { url: URL_JUEGO, zoom: [560,310,800,450], pasos: [
+    { img:'rol-1-elegir', ring:[665,326,590,62], t:'Tu comando ya viene asignado', p:'Entras con tu correo y el sistema ya sabe a qué comando perteneces. No lo eliges tú.' },
+    { img:'rol-1-elegir', ring:[665,447,571,132], t:'Elige tu rol', p:'Son diez roles en cuatro áreas. Cada uno maneja una palanca distinta de la campaña.' },
+    { img:'rol-2-candidato', ring:[665,467,284,54], t:'Por ejemplo: Candidato', p:'Imagen, credibilidad y vocería en crisis. Es un rol de jefatura: hay uno solo por comando.' },
+    { img:'rol-2-candidato', ring:[665,781,590,40], zoom:[560,420,800,450], t:'Pulsa «Entrar al War Room»', p:'Si te equivocas, puedes cambiarlo tú mismo con el botón «Cambiar rol» de la barra de arriba.' }
   ]},
   sala: { url: URL_JUEGO, pasos: [
-    { img:'sala-base', ring:[555,183,132,42], t:'1 · Dirección', p:'El mando: candidatura, coordinación e identidad del partido. Aquí hablas con tu comando, entregas tu trabajo semanal y configuras tu War Room.' },
-    { img:'sala-base', ring:[737,403,207,42], t:'2 · Análisis / Monitoreo', p:'Lo que la clase lee: el diario con la red social, las noticias y la encuesta de la semana.' },
-    { img:'sala-base', ring:[330,363,154,42], t:'3 · Operaciones', p:'Qué se publica y cómo: la Biblioteca del comando y el compositor que publica en el muro de la clase.' },
-    { img:'sala-base', ring:[556,491,217,42], t:'4 · Territorio y Digital', p:'Cerrado por ahora, con candado. Se abre con los módulos siguientes: es nuestra próxima actividad.' }
+    { img:'sala-base', ring:[870,258,136,46], t:'1 · Dirección', p:'El mando: candidatura, coordinación e identidad del partido. Aquí hablas con tu comando, entregas tu trabajo semanal y configuras tu War Room.' },
+    { img:'sala-base', ring:[1127,559,211,46], t:'2 · Análisis / Monitoreo', p:'Lo que la clase lee: el diario con la red social, las noticias y la encuesta de la semana.' },
+    { img:'sala-base', ring:[565,502,158,46], t:'3 · Operaciones', p:'Qué se publica y cómo: la Biblioteca del comando y el compositor que publica en el muro de la clase.' },
+    { img:'sala-base', ring:[880,677,221,46], t:'4 · Territorio y Digital', p:'Cerrado por ahora, con candado. Se abre con los módulos siguientes: es nuestra próxima actividad.' }
   ]},
   candidato: { url: URL_JUEGO, pasos: [
-    { img:'dir-1-coordinacion', ring:[434,109,126,32], t:'Abre «Mi War Room»', p:'Dentro del sector Dirección, entra a la pestaña «Mi War Room». Ahí armas la identidad de tu campaña.' },
-    { img:'dir-3-datos', ring:[138,262,468,230], t:'Escribe los datos de tu campaña', p:'Nombre del partido, nombre del candidato o candidata y el lema de campaña.' },
-    { img:'dir-3-datos', ring:[138,512,216,48], t:'Elige el color del partido', p:'Es el color que verá tu comando en el muro y en la vista previa.' },
-    { img:'dir-4-editor', ring:[433,243,414,287], t:'Sube tu logo y la foto del candidato', p:'Al subir una imagen se abre el editor: arrastra para mover y usa la rueda para acercar. Pulsa «Aplicar» cuando el encuadre te guste.' },
-    { img:'dir-5-completo', ring:[137,535,470,130], t:'Completa tu cuenta en redes', p:'Foto de perfil y portada de tu cuenta. Si no subes foto de perfil, la cuenta usa la del candidato.' },
-    { img:'dir-5-completo', ring:[643,155,502,190], t:'Míralo en vivo', p:'La vista previa se actualiza mientras llenas el formulario: logo, candidato, lema y color.' },
-    { img:'dir-6-guardado', ring:[138,700,468,42], t:'Pulsa «Guardar War Room»', p:'Verás «War Room configurado». Desde ese momento tu identidad aparece en la sala y en tus publicaciones.' }
+    { img:'dir-1-coordinacion', ring:[430,105,134,40], zoom:[0,60,960,540], t:'Abre «Mi War Room»', p:'Dentro del sector Dirección, entra a la pestaña «Mi War Room». Ahí armas la identidad de tu campaña.' },
+    { img:'dir-3-datos', ring:[465,262,468,230], zoom:Z_FORM_ARRIBA, t:'Escribe los datos de tu campaña', p:'Nombre del partido, nombre del candidato o candidata y el lema de campaña.' },
+    { img:'dir-3-datos', ring:[461,506,226,56], zoom:Z_FORM_ARRIBA, t:'Elige el color del partido', p:'Es el color que verá tu comando en el muro y en la vista previa.' },
+    { img:'dir-4-editor', ring:[753,382,414,288], zoom:[560,350,800,450], t:'Sube tu logo y la foto del candidato', p:'Al subir una imagen se abre el editor: arrastra para mover y usa la rueda para acercar. Pulsa «Aplicar» cuando el encuadre te guste.' },
+    { img:'dir-5-completo', ring:[459,704,426,166], zoom:Z_FORM_ABAJO, t:'Completa tu cuenta en redes', p:'Foto de perfil y portada de tu cuenta. Si no subes foto de perfil, la cuenta usa la del candidato.' },
+    { img:'dir-5-completo', ring:[966,168,510,358], zoom:Z_FORM_ARRIBA, t:'Míralo en vivo', p:'La vista previa se actualiza mientras llenas el formulario: logo, candidato, lema y color.' },
+    { img:'dir-6-guardado', ring:[461,877,476,48], zoom:null, t:'Pulsa «Guardar War Room»', p:'Verás «War Room configurado». Desde ese momento tu identidad aparece en la sala y en tus publicaciones.' }
   ]},
   contenido: { url: URL_JUEGO, pasos: [
-    { img:'sala-personalizada', ring:[330,363,154,42], t:'Entra a Operaciones', p:'Es el sector donde se prepara y se publica el contenido del comando.' },
-    { img:'ope-1-biblioteca', ring:[998,343,90,40], t:'Sube tus piezas a la Biblioteca', p:'Videos, imágenes e identidad. Cualquiera del comando puede subir; Comunicaciones las publica desde aquí.' },
-    { img:'ope-2-publicar', ring:[273,227,734,90], t:'Escribe tu publicación', p:'Hasta 280 caracteres. Puedes sumar emoji o publicarla de forma anónima.' },
-    { img:'ope-3-adjuntar', ring:[321,360,204,114], t:'Adjunta una pieza de tu Biblioteca', p:'Puedes adjuntar hasta 6 piezas, entre imágenes y videos.' },
-    { img:'ope-4-preview', ring:[266,440,734,330], t:'Revisa «Así se va a ver»', p:'La publicación sale con la identidad de tu partido: logo, nombre y candidato.' },
-    { img:'ope-5-publicado', ring:[249,310,768,460], t:'Ya está en el muro de la clase', p:'Los otros comandos la ven y pueden reaccionar, comentar o compartir. Eso le da pulso a tu comando.' }
+    { img:'sala-personalizada', ring:[565,502,158,46], t:'Entra a Operaciones', p:'Es el sector donde se prepara y se publica el contenido del comando.' },
+    { img:'ope-1-biblioteca', ring:[1314,339,98,48], zoom:Z_PANEL, t:'Sube tus piezas a la Biblioteca', p:'Videos, imágenes e identidad. Cualquiera del comando puede subir; Comunicaciones las publica desde aquí.' },
+    { img:'ope-2-publicar', ring:[589,223,742,98], zoom:Z_PANEL, t:'Escribe tu publicación', p:'Hasta 280 caracteres. Puedes sumar emoji o publicarla de forma anónima.' },
+    { img:'ope-3-adjuntar', ring:[637,496,213,123], zoom:[440,230,1040,585], t:'Adjunta una pieza de tu Biblioteca', p:'Puedes adjuntar hasta 6 piezas, entre imágenes y videos.' },
+    { img:'ope-4-preview', ring:[582,436,742,534], zoom:[385,330,1150,647], t:'Revisa «Así se va a ver»', p:'La publicación sale con la identidad de tu partido: logo, nombre y candidato.' },
+    { img:'ope-5-publicado', ring:[565,497,775,555], zoom:[385,420,1150,647], t:'Ya está en el muro de la clase', p:'Los otros comandos la ven y pueden reaccionar, comentar o compartir. Eso le da pulso a tu comando.' }
   ]},
-  entrega: { url: URL_JUEGO, pasos: [
-    { img:'dir-7-semana', ring:[321,287,638,68], t:'Elige tu archivo', p:'PDF, Word, PPT, Excel, imagen o zip. Es el trabajo que el docente califica.' },
-    { img:'dir-7-semana', ring:[321,393,638,80], t:'Agrega una nota (opcional)', p:'Cuenta brevemente qué hiciste esta semana.' },
-    { img:'dir-7-semana', ring:[321,489,638,40], t:'Pulsa «Entregar Semana 1»', p:'Tu entrega queda registrada. El docente la revisa fuera de la plataforma, y su nota mueve tu encuesta.' }
+  entrega: { url: URL_JUEGO, zoom: [385,160,1150,647], pasos: [
+    { img:'dir-7-semana', ring:[637,283,646,76], t:'Elige tu archivo', p:'PDF, Word, PPT, Excel, imagen o zip. Es el trabajo que el docente califica.' },
+    { img:'dir-7-semana', ring:[637,389,646,88], t:'Agrega una nota (opcional)', p:'Cuenta brevemente qué hiciste esta semana.' },
+    { img:'dir-7-semana', ring:[637,485,646,48], t:'Pulsa «Entregar Semana 1»', p:'Tu entrega queda registrada. El docente la revisa fuera de la plataforma, y su nota mueve tu encuesta.' }
   ]},
   debate: { url: URL_JUEGO, pasos: [
-    { img:'deb-1-crear', ring:[304,173,672,446], t:'Se crea una sala de debate', p:'Con número, nombre, tema y un código de 4 dígitos: solo entra quien lo tenga. Hoy la crea el docente.' },
-    { img:'deb-2-estrado', ring:[49,380,1168,380], t:'Dos atriles, un escenario', p:'Cada debatiente tiene su espacio con micrófono y cámara. La sala lleva la marca #DebateGOBERNA.' }
+    { img:'deb-1-crear', ring:[620,169,680,454], zoom:[385,120,1150,647], t:'Se crea una sala de debate', p:'Con número, nombre, tema y un código de 4 dígitos: solo entra quien lo tenga. Hoy la crea el docente.' },
+    { img:'deb-2-estrado', ring:[366,419,1175,408], zoom:[160,160,1600,900], t:'Dos atriles, un escenario', p:'Cada debatiente tiene su espacio con micrófono y cámara. La sala lleva la marca #DebateGOBERNA.' },
+    { img:'deb-2-estrado', ring:[149,1013,1608,67], zoom:[160,180,1600,900], t:'El docente modera', p:'Panel de control: estado de la sala, tiempo restante, participantes y ronda actual. El botón «Hablar» le permite dirigirse a los debatientes.' }
   ]}
 };
 const STEP_MS = 5600;
@@ -447,14 +452,14 @@ function montarDemo(sec){
   function ir(n){
     i = n; const p = pasos[i];
     imgs.forEach(im => im.classList.toggle('on', im.dataset.k === p.img));
-    const z = p.zoom || cfg.zoom;
+    const z = p.zoom !== undefined ? p.zoom : cfg.zoom;
     screen.style.transform = z ? `scale(${W / z[2]}) translate(${-z[0] / W * 100}%, ${-z[1] / H * 100}%)` : 'none';
     caja(ring, p.ring); ring.classList.add('on');
     cursor.style.left = pct(p.ring[0] + p.ring[2] - 60, W); cursor.style.top = pct(p.ring[1] + p.ring[3] - 14, H); cursor.classList.add('on');
     [...lista.children].forEach((li,k) => { li.classList.toggle('on', k === i); li.classList.toggle('done', k < i); });
     clearInterval(typer); ghost.style.display = 'none';
     if (p.ghost) {
-      const g = p.ghost; caja(ghost, [g.rect[0] + 54, g.rect[1], g.rect[2] - 54, g.rect[3]]); ghost.className = 'ghost' + (g.pw ? ' pw' : ''); ghost.style.display = 'flex';
+      const g = p.ghost; caja(ghost, [g.rect[0] + 44, g.rect[1] + 6, g.rect[2] - 44 - 64, g.rect[3] - 12]); ghost.className = 'ghost' + (g.pw ? ' pw' : ''); ghost.style.display = 'flex';
       let k = 0; while (ghost.firstChild) ghost.removeChild(ghost.firstChild); const tn = document.createTextNode(''); ghost.prepend(tn);
       setTimeout(() => { typer = setInterval(() => { tn.nodeValue = g.text.slice(0, ++k); if (k >= g.text.length) clearInterval(typer); }, 90); }, 500);
     }
