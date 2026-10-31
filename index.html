@@ -375,28 +375,24 @@ addEventListener('resize', fit); fit();
 /* Demos: capturas reales, medidas sobre 1280×800. Cada paso lleva un aro (x, y, ancho, alto). */
 const W = 1920, H = 1080;
 const URL_HUB = 'https://simulacion.goberna.us', URL_JUEGO = 'https://simulacion.goberna.us/war-room/';
-const Z_LOGIN = [560,470,800,450];           /* zona de la tarjeta de login */
-const Z_FORM_ARRIBA = [410,160,1100,619];    /* formulario «Mi War Room», parte alta */
-const Z_FORM_ABAJO = [410,440,1100,619];     /* formulario «Mi War Room», parte baja */
-const Z_PANEL = [385,100,1150,647];          /* paneles de área (Biblioteca, Publicar) */
 const DEMOS = {
-  primer: { url: URL_HUB, zoom: Z_LOGIN, pasos: [
+  primer: { url: URL_HUB, pasos: [
     { img:'login-1-correo', ring:[747,608,426,56], ghost:{rect:[747,608,426,56], text:'tu.correo@ejemplo.com'}, t:'Escribe tu correo', p:'Usa el mismo correo con el que te inscribiste al diploma.' },
     { img:'login-1-correo', ring:[747,688,426,56], t:'Pulsa «Continuar»', p:'El sistema reconoce que es tu primer ingreso y te pide crear una contraseña.' },
     { img:'login-2-primer-ingreso', ring:[747,618,426,128], ghost:{rect:[747,618,426,56], text:'••••••••••', pw:true}, t:'Crea tu contraseña', p:'Mínimo 8 caracteres. Escríbela dos veces para confirmarla.' },
     { img:'login-3-clave-escrita', ring:[747,810,426,56], t:'Pulsa «Crear contraseña y entrar»', p:'Desde ahora entrarás con tu correo y esa contraseña.' },
-    { img:'login-4-simuladores', ring:[424,200,345,271], zoom:null, t:'Elige War Room', p:'Tu lista muestra los simuladores. El que dice «Habilitado» es al que puedes entrar.' }
+    { img:'login-4-simuladores', ring:[424,200,345,271], t:'Elige War Room', p:'Tu lista muestra los simuladores. El que dice «Habilitado» es al que puedes entrar.' }
   ]},
-  regreso: { url: URL_HUB, zoom: Z_LOGIN, pasos: [
+  regreso: { url: URL_HUB, pasos: [
     { img:'login-1-correo', ring:[747,608,426,56], ghost:{rect:[747,608,426,56], text:'tu.correo@ejemplo.com'}, t:'Escribe tu correo', p:'Y pulsa «Continuar».' },
     { img:'login-5-clave-existente', ring:[747,608,426,56], ghost:{rect:[747,608,426,56], text:'••••••••••', pw:true}, t:'Escribe tu contraseña', p:'La misma que creaste en tu primer ingreso. Marca «Recordarme» si es tu computadora.' },
     { img:'login-5-clave-existente', ring:[747,728,426,56], t:'Pulsa «Iniciar sesión»', p:'¿Olvidaste tu contraseña? Pídele a un administrador que la restablezca.' }
   ]},
-  rol: { url: URL_JUEGO, zoom: [560,310,800,450], pasos: [
+  rol: { url: URL_JUEGO, pasos: [
     { img:'rol-1-elegir', ring:[665,326,590,62], t:'Tu comando ya viene asignado', p:'Entras con tu correo y el sistema ya sabe a qué comando perteneces. No lo eliges tú.' },
     { img:'rol-1-elegir', ring:[665,447,571,132], t:'Elige tu rol', p:'Son diez roles en cuatro áreas. Cada uno maneja una palanca distinta de la campaña.' },
     { img:'rol-2-candidato', ring:[665,467,284,54], t:'Por ejemplo: Candidato', p:'Imagen, credibilidad y vocería en crisis. Es un rol de jefatura: hay uno solo por comando.' },
-    { img:'rol-2-candidato', ring:[665,781,590,40], zoom:[560,420,800,450], t:'Pulsa «Entrar al War Room»', p:'Si te equivocas, puedes cambiarlo tú mismo con el botón «Cambiar rol» de la barra de arriba.' }
+    { img:'rol-2-candidato', ring:[665,781,590,40], t:'Pulsa «Entrar al War Room»', p:'Si te equivocas, puedes cambiarlo tú mismo con el botón «Cambiar rol» de la barra de arriba.' }
   ]},
   sala: { url: URL_JUEGO, pasos: [
     { img:'sala-base', ring:[870,258,136,46], t:'1 · Dirección', p:'El mando: candidatura, coordinación e identidad del partido. Aquí hablas con tu comando, entregas tu trabajo semanal y configuras tu War Room.' },
@@ -405,31 +401,31 @@ const DEMOS = {
     { img:'sala-base', ring:[880,677,221,46], t:'4 · Territorio y Digital', p:'Cerrado por ahora, con candado. Se abre con los módulos siguientes: es nuestra próxima actividad.' }
   ]},
   candidato: { url: URL_JUEGO, pasos: [
-    { img:'dir-1-coordinacion', ring:[430,105,134,40], zoom:[0,60,960,540], t:'Abre «Mi War Room»', p:'Dentro del sector Dirección, entra a la pestaña «Mi War Room». Ahí armas la identidad de tu campaña.' },
-    { img:'dir-3-datos', ring:[465,262,468,230], zoom:Z_FORM_ARRIBA, t:'Escribe los datos de tu campaña', p:'Nombre del partido, nombre del candidato o candidata y el lema de campaña.' },
-    { img:'dir-3-datos', ring:[461,506,226,56], zoom:Z_FORM_ARRIBA, t:'Elige el color del partido', p:'Es el color que verá tu comando en el muro y en la vista previa.' },
-    { img:'dir-4-editor', ring:[753,382,414,288], zoom:[560,350,800,450], t:'Sube tu logo y la foto del candidato', p:'Al subir una imagen se abre el editor: arrastra para mover y usa la rueda para acercar. Pulsa «Aplicar» cuando el encuadre te guste.' },
-    { img:'dir-5-completo', ring:[459,704,426,166], zoom:Z_FORM_ABAJO, t:'Completa tu cuenta en redes', p:'Foto de perfil y portada de tu cuenta. Si no subes foto de perfil, la cuenta usa la del candidato.' },
-    { img:'dir-5-completo', ring:[966,168,510,358], zoom:Z_FORM_ARRIBA, t:'Míralo en vivo', p:'La vista previa se actualiza mientras llenas el formulario: logo, candidato, lema y color.' },
-    { img:'dir-6-guardado', ring:[461,877,476,48], zoom:null, t:'Pulsa «Guardar War Room»', p:'Verás «War Room configurado». Desde ese momento tu identidad aparece en la sala y en tus publicaciones.' }
+    { img:'dir-1-coordinacion', ring:[430,105,134,40], t:'Abre «Mi War Room»', p:'Dentro del sector Dirección, entra a la pestaña «Mi War Room». Ahí armas la identidad de tu campaña.' },
+    { img:'dir-3-datos', ring:[465,262,468,230], t:'Escribe los datos de tu campaña', p:'Nombre del partido, nombre del candidato o candidata y el lema de campaña.' },
+    { img:'dir-3-datos', ring:[461,506,226,56], t:'Elige el color del partido', p:'Es el color que verá tu comando en el muro y en la vista previa.' },
+    { img:'dir-4-editor', ring:[753,382,414,288], t:'Sube tu logo y la foto del candidato', p:'Al subir una imagen se abre el editor: arrastra para mover y usa la rueda para acercar. Pulsa «Aplicar» cuando el encuadre te guste.' },
+    { img:'dir-5-completo', ring:[459,704,426,166], t:'Completa tu cuenta en redes', p:'Foto de perfil y portada de tu cuenta. Si no subes foto de perfil, la cuenta usa la del candidato.' },
+    { img:'dir-5-completo', ring:[966,168,510,358], t:'Míralo en vivo', p:'La vista previa se actualiza mientras llenas el formulario: logo, candidato, lema y color.' },
+    { img:'dir-6-guardado', ring:[461,877,476,48], t:'Pulsa «Guardar War Room»', p:'Verás «War Room configurado». Desde ese momento tu identidad aparece en la sala y en tus publicaciones.' }
   ]},
   contenido: { url: URL_JUEGO, pasos: [
     { img:'sala-personalizada', ring:[565,502,158,46], t:'Entra a Operaciones', p:'Es el sector donde se prepara y se publica el contenido del comando.' },
-    { img:'ope-1-biblioteca', ring:[1314,339,98,48], zoom:Z_PANEL, t:'Sube tus piezas a la Biblioteca', p:'Videos, imágenes e identidad. Cualquiera del comando puede subir; Comunicaciones las publica desde aquí.' },
-    { img:'ope-2-publicar', ring:[589,223,742,98], zoom:Z_PANEL, t:'Escribe tu publicación', p:'Hasta 280 caracteres. Puedes sumar emoji o publicarla de forma anónima.' },
-    { img:'ope-3-adjuntar', ring:[637,496,213,123], zoom:[440,230,1040,585], t:'Adjunta una pieza de tu Biblioteca', p:'Puedes adjuntar hasta 6 piezas, entre imágenes y videos.' },
-    { img:'ope-4-preview', ring:[582,436,742,534], zoom:[385,330,1150,647], t:'Revisa «Así se va a ver»', p:'La publicación sale con la identidad de tu partido: logo, nombre y candidato.' },
-    { img:'ope-5-publicado', ring:[565,497,775,555], zoom:[385,420,1150,647], t:'Ya está en el muro de la clase', p:'Los otros comandos la ven y pueden reaccionar, comentar o compartir. Eso le da pulso a tu comando.' }
+    { img:'ope-1-biblioteca', ring:[1314,339,98,48], t:'Sube tus piezas a la Biblioteca', p:'Videos, imágenes e identidad. Cualquiera del comando puede subir; Comunicaciones las publica desde aquí.' },
+    { img:'ope-2-publicar', ring:[589,223,742,98], t:'Escribe tu publicación', p:'Hasta 280 caracteres. Puedes sumar emoji o publicarla de forma anónima.' },
+    { img:'ope-3-adjuntar', ring:[637,496,213,123], t:'Adjunta una pieza de tu Biblioteca', p:'Puedes adjuntar hasta 6 piezas, entre imágenes y videos.' },
+    { img:'ope-4-preview', ring:[582,436,742,534], t:'Revisa «Así se va a ver»', p:'La publicación sale con la identidad de tu partido: logo, nombre y candidato.' },
+    { img:'ope-5-publicado', ring:[565,497,775,555], t:'Ya está en el muro de la clase', p:'Los otros comandos la ven y pueden reaccionar, comentar o compartir. Eso le da pulso a tu comando.' }
   ]},
-  entrega: { url: URL_JUEGO, zoom: [385,160,1150,647], pasos: [
+  entrega: { url: URL_JUEGO, pasos: [
     { img:'dir-7-semana', ring:[637,283,646,76], t:'Elige tu archivo', p:'PDF, Word, PPT, Excel, imagen o zip. Es el trabajo que el docente califica.' },
     { img:'dir-7-semana', ring:[637,389,646,88], t:'Agrega una nota (opcional)', p:'Cuenta brevemente qué hiciste esta semana.' },
     { img:'dir-7-semana', ring:[637,485,646,48], t:'Pulsa «Entregar Semana 1»', p:'Tu entrega queda registrada. El docente la revisa fuera de la plataforma, y su nota mueve tu encuesta.' }
   ]},
   debate: { url: URL_JUEGO, pasos: [
-    { img:'deb-1-crear', ring:[620,169,680,454], zoom:[385,120,1150,647], t:'Se crea una sala de debate', p:'Con número, nombre, tema y un código de 4 dígitos: solo entra quien lo tenga. Hoy la crea el docente.' },
-    { img:'deb-2-estrado', ring:[366,419,1175,408], zoom:[160,160,1600,900], t:'Dos atriles, un escenario', p:'Cada debatiente tiene su espacio con micrófono y cámara. La sala lleva la marca #DebateGOBERNA.' },
-    { img:'deb-2-estrado', ring:[149,1013,1608,67], zoom:[160,180,1600,900], t:'El docente modera', p:'Panel de control: estado de la sala, tiempo restante, participantes y ronda actual. El botón «Hablar» le permite dirigirse a los debatientes.' }
+    { img:'deb-1-crear', ring:[620,169,680,454], t:'Se crea una sala de debate', p:'Con número, nombre, tema y un código de 4 dígitos: solo entra quien lo tenga. Hoy la crea el docente.' },
+    { img:'deb-2-estrado', ring:[366,419,1175,408], t:'Dos atriles, un escenario', p:'Cada debatiente tiene su espacio con micrófono y cámara. La sala lleva la marca #DebateGOBERNA.' },
+    { img:'deb-2-estrado', ring:[149,1013,1608,67], t:'El docente modera', p:'Panel de control: estado de la sala, tiempo restante, participantes y ronda actual. El botón «Hablar» le permite dirigirse a los debatientes.' }
   ]}
 };
 const STEP_MS = 5600;
@@ -452,8 +448,6 @@ function montarDemo(sec){
   function ir(n){
     i = n; const p = pasos[i];
     imgs.forEach(im => im.classList.toggle('on', im.dataset.k === p.img));
-    const z = p.zoom !== undefined ? p.zoom : cfg.zoom;
-    screen.style.transform = z ? `scale(${W / z[2]}) translate(${-z[0] / W * 100}%, ${-z[1] / H * 100}%)` : 'none';
     caja(ring, p.ring); ring.classList.add('on');
     cursor.style.left = pct(p.ring[0] + p.ring[2] - 60, W); cursor.style.top = pct(p.ring[1] + p.ring[3] - 14, H); cursor.classList.add('on');
     [...lista.children].forEach((li,k) => { li.classList.toggle('on', k === i); li.classList.toggle('done', k < i); });
